@@ -1,0 +1,126 @@
+mkdir backend
+mkdir client
+cd backend 
+    install 1st 2 requirements
+    npx tsc --init
+    backend/tsconfig.json - 
+        "target": "es2016" change to "target": "es2021"
+        "module": "commonjs", //"rootDir": "./", (uncomment), "rootDir": "./src", // "outDir": "./", (uncomment), "outDir": "./dist",
+        add this just before last curly bracket - 
+        ,
+        "include": ["src/**/**/*.ts", "src/@types/**/*.ts"],
+        "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+    backend/package.json
+        "test": "echo \"Error: no test specified\" && exit 1" exchange to 
+            "dev": "ts-node-dev --files src/index.ts",
+            "build": "tsc && ./package.json ./dist",
+            "start": "node dist/index.js"
+    mkdir src , cd src
+        mkdir @types config controllers crons enums middlewares models routes services utils validators
+        type nul > index.ts
+    backend/.env
+    backend/src/utils/get-env.ts
+    backend/src/config/env.config.ts
+    backend/src/config/http.congig.ts
+    backend/src/utils/app-error.ts
+    backend/src/middlewares/errorHandler.middleware.ts
+    backend/src/middlewares/asyncHandler.middleware.ts
+
+    Postman - localhost8000 ---> Send
+    MongoDB- cluster deployement , connect to vs, .env , MONGO_URI mongodb+srv://pranjalpatil0705:<db_password>@cluster0.hrjuv2y.mongodb.net/,  liXDQtYRsj2FfAHb, financial_app_db?retryWrites=true&w=majority
+    backend/src/config/database.config.ts
+
+    backend/src/models/user.model.ts
+    backend/src/utils/bcrypt.ts
+    backend/src/models/transaction.model.ts
+    backend/src/utils/format-currency.ts
+    backend/src/models/report.model.ts
+    backend/src/models/report-setting.model.ts
+
+    backend/src/controllers/auth.controller.ts
+    backend/src/validators/auth.validator.ts
+    backend/src/routes/auth.route.ts
+    backend/src/services/auth.service.ts
+    backend/src/utils/helper.ts
+
+    register -- http://localhost:8000/api/auth/register JSON
+
+    backend/src/utils/jwt.ts
+    login -- http://localhost:8000/api/auth/login JSON
+
+    backend/src/config/passport.config.ts
+    backend/src/services/user.service.ts
+    backend/src/controllers/user.controller.ts
+    backend/src/routes/user.route.ts
+    backend/src/@types/index.d.ts
+
+    current-user -- http://localhost:8000/api/user/current-user (Authorization -- bearer token -- access token from login) JSON
+
+    backend/src/controllers/transaction.controller.ts
+    backend/src/validators/transaction.validator.ts
+    backend/src/services/transaction.service.ts
+    backend/src/routes/transaction.route.ts
+    transcation -- http://localhost:8000/api/transaction/create (Authorization -- bearer token -- access token from login) JSON
+    get all transaction -- 
+                        http://localhost:8000/api/transaction/all?keyword=&type=&recurringStatus=1&pageSize=10 
+                        http://localhost:8000/api/transaction/all?keyword=Netflix&type=&recurringStatus=1&pageSize=10 
+                        http://localhost:8000/api/transaction/all?keyword=&type=INCOME&recurringStatus=1&pageSize=10(Authorization -- bearer token -- access token from login)
+    get transaction by ID -- http://localhost:8000/api/transaction/689b580593cc706720cfc687 (last one is ID) no body 
+    duplicate transaction by ID --- http://localhost:8000/api/transaction/duplicate/689b580593cc706720cfc687 PUT
+    update transaction --  http://localhost:8000/api/transaction/update/689c646ad2fc0b6e63d349bb PUT
+    delete transaction -- http://localhost:8000/api/transaction/delete/689c63d3d2fc0b6e63d349b5 DEL
+    bulk delete transaction -- http://localhost:8000/api/transaction/bulk-delete DEL
+
+    bulk add transaction -- http://localhost:8000/api/transaction/bulk-transaction POST
+
+    backend/src/config/cloudinary.config.ts
+    .env - api from cloudinary
+    then add it into env.config.ts
+    multer (chrome)
+    multer cloudinary storage (chrome)
+    handle multer errror in middleware
+    backend/src/config/google-ai.config.ts
+    aistudiogoogle.com -- code--- <> --- typescript --- code 
+    to run code 
+    npm install @google/genai mime 
+    npm install -D @types/node
+    aistudiogoogle.com ---  get api key --- paste into gemini_api in .env
+    backend/src/utils/prompt.ts
+
+    https://www.npmjs.com/package/node-cron
+    backend/src/crons/scheduler.ts
+    https://crontab.guru/
+    backend/src/crons/index.ts
+    backend/src/crons/jobs
+    backend/src/crons/jobs/transaction.job.ts
+
+    backend/src/controllers/report.controller.ts
+    backend/src/services/report.service.ts
+    backend/src/validators/report.validator.ts
+    backend/src/routes/report.route.ts
+
+    backend/src/crons/jobs/report.job.ts
+    backend/src/config/resend.config.ts
+    backend/src/mailers
+    backend/src/mailers/templates
+    backend/src/mailers/mailer.ts
+    backend/src/mailers/report.mailer.ts
+    backend/src/mailers/templates/report.template.ts
+    backend/src/@types/report.type.ts
+
+    backend/src/validators/user.validator.ts
+
+    backend/src/controllers/analytics.controller.ts
+    backend/src/enums/date-range.enum.ts
+    backend/src/@types/analytics.type.ts
+    backend/src/services/analytics.service.ts
+    backend/src/utils/date.ts
+    backend/src/routes/analytics.route.ts
+
+    npm run dev
+
+cd client
+
+    clone / manually all files 
+    npm install -f 
+    

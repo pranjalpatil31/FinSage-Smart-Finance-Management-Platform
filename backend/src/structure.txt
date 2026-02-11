@@ -1,0 +1,86 @@
+Folder PATH listing for volume Pranjal
+Volume serial number is B867-28BA
+D:.
+|   index.ts
+|   structure.txt
+|   
++---@types
+|       analytics.type.ts
+|       index.d.ts
+|       report.type.ts
+|       
++---config
+|       cloudinary.config.ts
+|       database.config.ts
+|       env.config.ts
+|       google-ai.config.ts
+|       http.congig.ts
+|       passport.config.ts
+|       resend.config.ts
+|       
++---controllers
+|       analytics.controller.ts
+|       auth.controller.ts
+|       report.controller.ts
+|       transaction.controller.ts
+|       user.controller.ts
+|       
++---crons
+|   |   index.ts
+|   |   scheduler.ts
+|   |   
+|   \---jobs
+|           report.job.ts
+|           transaction.job.ts
+|           
++---enums
+|       date-range.enum.ts
+|       error-code.enum.ts
+|       
++---mailers
+|   |   mailer.ts
+|   |   report.mailer.ts
+|   |   
+|   \---templates
+|           report.template.ts
+|           
++---middlewares
+|       asyncHandler.middleware.ts
+|       errorHandler.middleware.ts
+|       
++---models
+|       report-setting.model.ts
+|       report.model.ts
+|       transaction.model.ts
+|       user.model.ts
+|       
++---routes
+|       analytics.route.ts
+|       auth.route.ts
+|       report.route.ts
+|       transaction.route.ts
+|       user.route.ts
+|       
++---services
+|       analytics.service.ts
+|       auth.service.ts
+|       report.service.ts
+|       transaction.service.ts
+|       user.service.ts
+|       
++---utils
+|       app-error.ts
+|       bcrypt.ts
+|       date.ts
+|       format-currency.ts
+|       get-env.ts
+|       helper.ts
+|       jwt.ts
+|       prompt.ts
+|       
+\---validators
+        auth.validator.ts
+        report.validator.ts
+        transaction.validator.ts
+        user.validator.ts
+        
