@@ -27,3 +27,4 @@ _billing.tsx
 
 backend/.env
 .env
+node_modules
